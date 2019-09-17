@@ -7,22 +7,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>201909171914 - Hello</title>
+<title>Category: 용어 - Hello</title>
 
 
-    <meta name="description" content="ResNet에서 스킵 연결 층을 깊게 할때 이점에서 매개변수가 줄어듬">
-<meta name="keywords" content="AI">
-<meta property="og:type" content="article">
-<meta property="og:title" content="201909171914">
-<meta property="og:url" content="https://deweyjung.github.io/2019/09/17/201909171914/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Hello">
+<meta property="og:url" content="https://deweyjung.github.io/categories/Docker/용어/index.html">
 <meta property="og:site_name" content="Hello">
-<meta property="og:description" content="ResNet에서 스킵 연결 층을 깊게 할때 이점에서 매개변수가 줄어듬">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://deweyjung.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-09-17T10:54:10.891Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="201909171914">
-<meta name="twitter:description" content="ResNet에서 스킵 연결 층을 깊게 할때 이점에서 매개변수가 줄어듬">
+<meta name="twitter:title" content="Hello">
 <meta name="twitter:image" content="https://deweyjung.github.io/images/og_image.png">
 
 
@@ -93,7 +88,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/og_image.png" alt="201909171914" height="28">
+                <img src="/images/og_image.png" alt="Hello" height="28">
             
             </a>
         </div>
@@ -144,22 +139,36 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/categories">Categories</a></li>
+            
+            <li><a href="/categories/Docker/">Docker</a></li>
+            
+            <li class="is-active"><a href="#" aria-current="page">용어</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-09-17T10:14:36.000Z">2019-09-17</time>
+                <time class="level-item has-text-grey" datetime="2019-09-17T10:15:20.000Z">2019-09-17</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/AI/">AI</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/AI/용어/">용어</a>
+                <a class="has-link-grey -link" href="/categories/Docker/">Docker</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Docker/용어/">용어</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 25 words)
+                    3 minutes read (About 516 words)
                 </span>
                 
                 
@@ -168,22 +177,60 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                201909171914
+                <a class="has-link-black-ter" href="/2019/09/17/201909171915/">용어</a>
             
         </h1>
         <div class="content">
-            <p>ResNet에서 스킵 연결</p>
-<p>층을 깊게 할때 이점에서 매개변수가 줄어듬</p>
+            <p>환경 : CentOS</p>
+<p>명령어 모음</p>
+<p>docker 설치<br>sudo yum -y update<br>sudo -y install docker docker-registry<br>systemctl enable docker.service<br>systemctl status docker.service  </p>
+<p>일반계정으로 sudo 없이 docker 사용  </p>
+<p>sudo groupadd docker  </p>
+<p>sudo usermod -aG docker $USER  </p>
+<p>ls -l /var/run/docker.sock  </p>
+<p>sudo chown root:docker /var/run/docker.sock  </p>
+<p>이미지 다운로드<br>docker pull centos or ubuntu or etc…  </p>
+<p>이미지 실행<br>sudo docker -t -i {image name}  </p>
+<p>이미지 삭제  </p>
+<p>sudo docker rmi {image id}  </p>
+<p>이미지 리스트<br>sudo docker images  </p>
+<p>이미지로 컨테이너 실행(-i 인터렉티브 모드, -t tty 모드, -d detached mode, -name 컨테이너 이름 설정, -v 마운트) - exit하면 컨테이너 함께 종료  </p>
+<p>sudo docker run -it –name {container name} -p 8080:8080 -v {host folder path}:{container folder path}:z centos /bin/bash  </p>
+<p>이미지로 컨테이너 실행시 포트 설정  </p>
+<p>docker run -i -t –name {container name} -p 80:80 -p 81:8080 -p 82:8090 ubuntu:14.04  </p>
+<p>도커에서 컨테이너 명령어 실행  </p>
+<p>docker exec -it mysql /bin/bash  </p>
+<p>볼륨 사용 예(호스트 : /my/own/datadir, 컨테이너 : /var/lib/mysql)  </p>
+<p>docker run -d -p 3306:3306 \<br>-e MYSQL_ALLOW_EMPTY_PASSWORD=true \<br>–name mysql \<br>-v /my/own/datadir:/var/lib/mysql \ # &lt;- volume mount<br>mysql:5.7  </p>
+<p>컨테이너 리스트  </p>
+<p>docker ps -a  </p>
+<p>컨테이너 재시작  </p>
+<p>docker restart {container id}  </p>
+<p>컨테이너 중지  </p>
+<p>docker stop {container id}  </p>
+<p>컨테이너 접속<br>docker attach {container id}  </p>
+<p>컨테이너 삭제<br>docker rm {container id}  </p>
+<p>컨테이너 수정 사항<br>docker diff {container id}  </p>
+<p>컨테이너 커밋 - 새로운 이미지 생성<br>docker commit {container id} {repository name/image name:image tag}  </p>
+<p>컨테이너 STATUS 확인  </p>
+<p>docker container inspect {container id}  </p>
+<p>이미지 저장  </p>
+<p>sudo docker commit -p {CONTAINER ID} {NAMES}  </p>
+<p>이미지 백업  </p>
+<p>sudo docker save -o {저장할이름}.tar {이미지 이름}  </p>
+<p>백업이미지 복구  </p>
+<p>sudo docker load &lt; {백업한 파일이름}.tar  </p>
+<p>Docker Compose 설치  </p>
+<p>curl -L “<a href="https://github.com/docker/compose/releases/download/1.9.0/docker-compose-$" target="_blank" rel="noopener">https://github.com/docker/compose/releases/download/1.9.0/docker-compose-$</a>(uname -s)-$(uname -m)” -o /usr/local/bin/docker-compose<br>chmod +x /usr/local/bin/docker-compose  </p>
+<h1 id="test"><a href="#test" class="headerlink" title="test"></a>test</h1><p>docker-compose version  </p>
+<p>Docker Compose 예  </p>
+<p>version: ‘2’  </p>
+<p>services:<br>db:<br>image: mysql:5.7<br>volumes:<br>- db_data:/var/lib/mysql<br>restart: always<br>environment:<br>MYSQL_ROOT_PASSWORD: wordpress<br>MYSQL_DATABASE: wordpress<br>MYSQL_USER: wordpress<br>MYSQL_PASSWORD: wordpress  </p>
+<p>wordpress:<br>depends_on:<br>- db<br>image: wordpress:latest<br>volumes:<br>- wp_data:/var/www/html<br>ports:<br>- “8000:80”<br>restart: always<br>environment:<br>WORDPRESS_DB_HOST: db:3306<br>WORDPRESS_DB_PASSWORD: wordpress<br>volumes:<br>db_data:<br>wp_data:  </p>
+<p>Docker Compose 실행  </p>
+<p>vi docker-compose.yml  </p>
+<p>docker-compose up  </p>
 
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/AI/">AI</a>
-                </div>
-            </div>
         </div>
         
         
@@ -195,26 +242,7 @@
 
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/09/17/201909171915/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">용어</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/17/201909171912/">
-                <span class="level-item">학습과추론</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
-    </div>
-</div>
+
 
 
 </div>
@@ -753,7 +781,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/og_image.png" alt="201909171914" height="28">
+                    <img src="/images/og_image.png" alt="Hello" height="28">
                 
                 </a>
                 <p class="is-size-7">

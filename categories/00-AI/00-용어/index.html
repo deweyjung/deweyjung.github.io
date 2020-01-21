@@ -7,12 +7,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Tag: deployment - Hello</title>
+<title>Category: 00. 용어 - Hello</title>
 
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="Hello">
-<meta property="og:url" content="https://deweyjung.github.io/tags/deployment/index.html">
+<meta property="og:url" content="https://deweyjung.github.io/categories/00-AI/00-용어/index.html">
 <meta property="og:site_name" content="Hello">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://deweyjung.github.io/images/og_image.png">
@@ -142,8 +142,11 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/tags">Tags</a></li>
-            <li class="is-active"><a href="#" aria-current="page">deployment</a></li>
+            <li><a href="/categories">Categories</a></li>
+            
+            <li><a href="/categories/00-AI/">00. AI</a></li>
+            
+            <li class="is-active"><a href="#" aria-current="page">00. 용어</a></li>
         </ul>
         </nav>
     </div>
@@ -155,17 +158,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-09-17T11:03:43.000Z">2019-09-17</time>
+                <time class="level-item has-text-grey" datetime="2019-09-17T10:13:01.000Z">2019-09-17</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/00-Deployment/">00. Deployment</a>
+                <a class="has-link-grey -link" href="/categories/00-AI/">00. AI</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/00-AI/00-용어/">00. 용어</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 5 words)
+                    a few seconds read (About 55 words)
                 </span>
                 
                 
@@ -174,12 +177,104 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/09/17/201909172003/">Deployment</a>
+                <a class="has-link-black-ter" href="/2019/09/17/201909171912/">학습과추론</a>
             
         </h1>
         <div class="content">
-            <p>jar cvf &lt;war파일이름&gt;.war</p>
-<p>tomcat9 - jdk 1.8</p>
+            <p>신경망에서 수행하는 작업은 학습과 추론 두가지가 있음.</p>
+<p>예) 손글씨 숫자 인식</p>
+<p>추론 : Softmax를 사용하지 않고 Affine계층까지 사용</p>
+<p>학습 : Softmax계층 필요</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-09-17T09:25:14.000Z">2019-09-17</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/00-AI/">00. AI</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/00-AI/00-용어/">00. 용어</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 1085 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/09/17/201909170625/">용어</a>
+            
+        </h1>
+        <div class="content">
+            <ul>
+<li>편미분 : 부분미분, 기울기, 최소 오차 찾기 위해 사용</li>
+<li>역전파 : backward propagation</li>
+<li>순전파 : forward propagation</li>
+<li>시그모이드(sigmoid) : 1 / (1 + (exp(-x)))</li>
+<li>소프트맥스(Softmax) : 입력값에 대한 출력값을 부드럽게 조정해 주는 함수<br>소프트맥스의 총합은 1<br>yk = exp(ak) / ∑(i=1, n) exp(ai) → 너무 큰값을 대입해서 오버플로우(overflow)가 발생하지 않도록 수식을 수정 → yk = exp(ak + C’) / ∑(i=1, n) exp(ai + C’)<br>일반적으로 C’는 입력값 중 최대값 사용</li>
+<li>ReLU : 입력값이 특정값 이상일 경우 출력. 그외에는 출력하지 않음(0)</li>
+<li>Affine : 신경망 순전파에서 사용하는 행렬의 곱</li>
+<li>스칼라 값 : 정해진 특정한 값</li>
+<li>평균 제곱 오차(mean squared errror, MSE) : 손실 함수 중 하나. 가장 많이 쓰이는 함수<br>E = (1/2)∑(k)(yk - tk)^2</li>
+<li>교차 엔트로피 오차(cross entropy error, CEE) : 손실 함수 중 하나<br>E = ∑(k)(tk * logyk)</li>
+<li>항등함수(identity function) : 입력을 그대로 출력하는 함수</li>
+<li>오차역전파법(back propagation) : 수식의 매개변수에 따른 기울기를 구해 오차를 줄이는 방법. 수치 미분에 비해 효율적이고 빠름. 매개변수가 많아도 효율적으로 계산할 수 있음.</li>
+<li>확률적 경사 하강법(stochastic gradient descent) : 기울기에 따라 방향을 정해서 움직이는 방법. 방향에 따른 기울기의 변화에서는 비효율적임.</li>
+<li>모멘텀(momentum) : 기울기 방향으로 물체가 가속됨을 적용한 방법. 매개변수에 속도를 계속 더해줌. 속도는 알파 곱하기 속도에 학습률 곱하기 기울기로 계산함.</li>
+<li>AdaGrad : 학습률을 점차 감소시키는 방법. 매개변수의 원소마다 적응적으로 갱신 정도를 조정. 기울기를 제곱하고 그것을 더해 1분의 루트로 감쌈.</li>
+<li>Adam : momentum과 AdaGrad를 결합한 방법.</li>
+<li>코딩시 가장 작은값 : 1e-7</li>
+<li>학습률 : 한번의 학습으로 얼마만큼 학습할 지, 즉 매개변수 값을 얼마나 갱신하느냐를 정하는 것.</li>
+<li>가중치 : weight. 매개변수.</li>
+<li>Xavier 초기값 : sigmoid함수, tanh함수등의 s자 모양 곡선일 경우는 좌우 대칭이랑 중앙 부근이 선형인 함수임. xavier초기값이 적당.</li>
+<li>He 초깃값 : ReLU에 적당.</li>
+<li>오버피팅 : 한 데이터 셋에만 지나치게 최적화 된 상태. 다른 데이터 셋에서 정확성이 떨어지게 됨. 매개변수가 많고 표현력이 높은 모델, 훈련 데이터가 적은 경우 발생.</li>
+<li>표준편차 : 평균에서 자료의 값이 많이 떨어질수록 표준편차가 크다.</li>
+<li>배치 정규화 알고리즘(batch normalization algorithm) : 각층이 활성화를 적당히 퍼뜨리도록 강제. 학습이 원활하게 수행됨. 학습속도개선, 초깃값에 크게 의존하지 않음, 오버피팅 억제.</li>
+<li>에폭(epoch) : 하나의 단위로서 모든 훈련을 소진했을 경우 훈련 횟수.</li>
+<li>오버피팅 억제 방법 :</li>
+</ul>
+<ol>
+<li>손실함수에 가중치의 L2노름을 더함.</li>
+<li>드롭아웃 : 학습시 임의의 노드를 골라 삭제. 단 시험 때는 각 뉴런의 출력에 훈련때 삭제한 비율을 곱하여 출력.</li>
+</ol>
+<ul>
+<li>하이퍼파라미터 : 각 층의 뉴런수, 배치 크기, 매개변수 갱신 시의 학습률과 가중치 감소 등.</li>
+<li>데이터 종류<br>훈련데이터 : 매개변수 학습<br>검증데이터 : 하이퍼파라미터 학습<br>시험데이터 : 범용 성능시험</li>
+<li>하이퍼파라미터 최적화 단계</li>
+</ul>
+<ol>
+<li>하이퍼파라미터 값의 범위를 설정</li>
+<li>설정된 범위에서 하이퍼파라미터의 값을 무작위로 추출</li>
+<li>2단계에서 샘플링한 하이퍼파라미터 값을 사용하여 학습, 검증데이터로 정확도 평가(단, 에폭은 작게 설정)</li>
+<li>2,3 단계를 특정 횟수 반복하며, 결과를 보고 하이퍼파라미터의 범위를 좁힘.</li>
+</ol>
+<ul>
+<li>전이학습(tranfer learning) : 이미 학습된 가중치를 다른 신경망에 복사하여 재사용하는 방법</li>
+</ul>
 
         </div>
         

@@ -6,6 +6,11 @@
 #   url: {homepage_of_author}
 # -------------------------------------
 
+dj:
+  name: Dongwoo Jung
+  twitter:
+  url: https://github.com/deweyjung
+
 cotes:
   name: Cotes Chung
   twitter: cotes2020
